@@ -1,25 +1,7 @@
-# Universidad Católica del Uruguay
-<img src="https://ucu.edu.uy/sites/all/themes/univer/logo.png">
+# Critica
 
-## Facultad de Ingeniería y Tecnologías
-### Programación II
-
-### Sistema de consultas médicas
-
-Como desarrolladores de software, se nos pide hacer el mantenimiento de un sistema de gestión médica, especifícamente se nos pide que hagamos mantenimiento de la funcionalidad de coordinación de consultas. Para ello debemos tener en cuenta que:
-1. Se podrían agregar otros datos del paciente como por ejemplo su edad.
-2. Se podrían agregar otros datos al Doctor como por ejemplo su especialidad.
-3. La consulta debe tener un identificador único
-4. Cada dato que se ingrese al sistema debe ser válidado.
-
-Para el ejercicio se pide
-
-#### ✍ Parte 1
-**Criticar el código dado en base a patrónes y principios**
-
-#### 🧐 Parte 2
-**Realizar las CRC correspondientes.**
-
-#### 👩‍💻 Parte 3
-**Aplique patrónes/principios según su crítica.**
-
+La clase AppointmentService no debería de validar si cada dato es correcto. Debería existir una clase concreta para validar los datos ingresados. Solo se debería recibir los datos del paciente y el doctor.
+Para validar los datos pienso que se deberían validar por separado, ya que los datos del doctor y paciente no son los mismos. De uno solo se requiere nombre y especialidad, y del otro la gran mayoría de sus datos personales.
+También se debería hacer clases separadas para ingresar datos del doctor y del paciente. 
+El identificador puede ser un int static que se vaya sumando cada vez que se cree una cita ese día.
+También crear una nueva clase llamada lugarfecha para que se valide y después se cree un lugar y una fecha para la cita. De manera que primero validemos con una clase y luego lo creamos.
